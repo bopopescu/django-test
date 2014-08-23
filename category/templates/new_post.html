@@ -1,0 +1,28 @@
+{% extends "registration/base.html" %}
+
+{% block main_content %}
+  <form id= "post_create" class="form-horizontal" role="form"  action="{% url 'create_post'%}"  method="post">
+      {% csrf_token %}
+      <div class="form-group">
+       <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-4">
+            <input name="name" class="form-control" id="name" placeholder="Name">
+         </div>
+       </div>
+      <div class="form-group">
+       <label class="col-sm-2 control-label" for="formGroupInputLarge">Select Category</label>
+      <div class="col-sm-4">
+        <select name ="category" class="form-control ">
+          {% for category in categories %}
+                <option value="{{ category.id }}">{{ category.name }}</option>
+            {% endfor %} 
+        </select>
+     </div>
+    </div>
+    <div class="form-group">
+       <div class="col-sm-offset-2 col-sm-4">
+         <input type="submit"  class="btn btn-default" value="Create Post">
+         </div>
+        </div>
+  </form>
+{% endblock %}
