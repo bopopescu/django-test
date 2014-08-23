@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
-from registration.signals import user_registered
+#from registration.signals import user_registered
 import pdb;
 
 
@@ -19,13 +19,13 @@ class UserProfile(models.Model):
     def __unicode__(self):  # Python 3: def __str__(self):
         return self.first_name
 
-def user_registered_callback(sender, user, request, **kwargs):
-    profile = UserProfile(user = user)
-    profile.first_name = request.POST["first_name"]
-    profile.last_name = request.POST["last_name"]
-    user.first_name= request.POST["first_name"]
-    user.last_name = request.POST["last_name"]
-    profile.save()
-    user.save()
+# def user_registered_callback(sender, user, request, **kwargs):
+#     profile = UserProfile(user = user)
+#     profile.first_name = request.POST["first_name"]
+#     profile.last_name = request.POST["last_name"]
+#     user.first_name= request.POST["first_name"]
+#     user.last_name = request.POST["last_name"]
+#     profile.save()
+#     user.save()
 
-user_registered.connect(user_registered_callback)
+# user_registered.connect(user_registered_callback)
