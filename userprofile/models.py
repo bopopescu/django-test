@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
+from PIL import Image
 #from registration.signals import user_registered
 import pdb;
 
@@ -9,7 +10,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User)
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
-    #avatar = models.ImageField(upload_to='uploads/avatars', default='', blank=True)
+    avatar = models.ImageField(upload_to='uploads/avatars', default='', blank=True)
     facebook_uid = models.PositiveIntegerField(blank=True, null=True)
     facebook_access_token = models.CharField(blank=True, max_length=255)
     facebook_access_token_expires = models.PositiveIntegerField(blank=True, null=True)
