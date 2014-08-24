@@ -116,7 +116,7 @@ django.contrib.auth.LOGIN_URL = '/'
 AUTH_PROFILE_MODULE='userprofile.UserProfile'
 
 STATICFILES_DIRS = (
- '/home/yuva/Desktop/python/post/static/bootstrap/'
+ '/home/yuva/Desktop/python/post/static/bootstrap/',
 )
 BOOTSTRAP3 = {
 'set_required': False,
