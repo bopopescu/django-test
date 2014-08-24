@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.cfg
+pip-egg-info/django_require_s3.egg-info/PKG-INFO
+pip-egg-info/django_require_s3.egg-info/SOURCES.txt
+pip-egg-info/django_require_s3.egg-info/dependency_links.txt
+pip-egg-info/django_require_s3.egg-info/not-zip-safe
+pip-egg-info/django_require_s3.egg-info/requires.txt
+pip-egg-info/django_require_s3.egg-info/top_level.txt
+require_s3/__init__.py
+require_s3/models.py
+require_s3/storage.py
+require_s3/tests.py

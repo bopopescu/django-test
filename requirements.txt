@@ -10,4 +10,3 @@ requests-oauthlib==0.3.2
 twython==3.0.0
 django-bootstrap3==4.11.0
 django-herokuapp
-Pillow-PIL
