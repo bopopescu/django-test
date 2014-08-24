@@ -1,9 +1,0 @@
-django
-pytz
-waitress
-dj-database-url
-psycopg2
-south
-django-require-s3
-boto
-sh
