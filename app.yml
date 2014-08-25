@@ -3,23 +3,13 @@ runtime: python
 version: 1
 api_version: 1
 
+handlers:
 
-# handlers:
-# # This handler routes requests sent via the deferred library.
-# # See https://developers.google.com/appengine/articles/deferred
-# - url: /_ah/queue/deferred
-#   script: djangoappengine.deferred.handler.application
-#   login: admin
-# # This handler routes requests for application statistics.
-# # See https://developers.google.com/appengine/docs/python/tools/appstats
-# - url: /_ah/stats/.*
-#   script: djangoappengine.appstats.application
-# - url: /media/admin
-#   static_dir: django/contrib/admin/media
-#   expiration: '0'
-# - url: /static/admin
-#   static_dir: django/contrib/admin/static/admin
-#   expiration: '0'
-# # This handler catches all requests that don't match a previous handler.
-# - url: /.*
-#   script: djangoappengine.main.application
+- url: /post
+  script: urls.py
+
+- url: /category
+  script: urls.py
+
+- url: /userprofile
+  script: urls.py
