@@ -11,7 +11,7 @@ class Post(models.Model):
     user = models.ForeignKey(User, unique=False)
     name = models.CharField(max_length=200)
     description = models.TextField(max_length=200)
-    image = models.ImageField(upload_to='uploads/avatars', default='', blank=True)
+    # image = models.ImageField(upload_to='uploads/avatars', default='', blank=True)
    
     def __unicode__(self):
     	return self.name
