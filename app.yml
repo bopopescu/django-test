@@ -5,11 +5,5 @@ api_version: 1
 
 handlers:
 
-- url: /post
-  script: urls.py
-
-- url: /category
-  script: urls.py
-
-- url: /userprofile
-  script: urls.py
+- url: /.*
+  script: post.post
