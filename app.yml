@@ -1,0 +1,8 @@
+application: djangocomment
+runtime: python
+version: 1
+api_version: 1
+
+handlers:
+- url: .*
+  script: djangoappengine.main.application
