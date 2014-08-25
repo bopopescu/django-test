@@ -7,6 +7,3 @@ handlers:
 
 - url: .*
   script: /post/urls.py
-
-env_variables:
-  DJANGO_SETTINGS_MODULE: 'post.post.settings'
