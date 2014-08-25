@@ -5,5 +5,5 @@ api_version: 1
 
 handlers:
 
-- url: /post/urls.*
-  script: post.post
+- url: .*
+  script: /post/urls.py
