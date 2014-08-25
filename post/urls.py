@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import patterns, url
+from django.conf.urls import patterns, url, include
 from django.contrib.auth.views import login, logout
 from django.contrib import admin
 admin.autodiscover()
