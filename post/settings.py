@@ -126,17 +126,3 @@ BOOTSTRAP3 = {
 'javascript_in_head': True,
 }
 
-STATICFILES_FINDERS = (
-'django.contrib.staticfiles.finders.FileSystemFinder',
-'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-# 'django.contrib.staticfiles.finders.DefaultStorageFinder',
-)
-
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = '<YOUR BUCKET NAME>'
-
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-
-ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
