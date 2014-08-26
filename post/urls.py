@@ -1,10 +1,9 @@
 from django.conf.urls import *
-from django.conf.urls import patterns
-# , url, include
-#from django.contrib.auth.views import login, logout
-from django.contrib import admin
-#admin.autodiscover()
-#from django.views.generic.base import TemplateView
+# from django.conf.urls import patterns, url, include
+# from django.contrib.auth.views import login, logout
+# from django.contrib import admin
+# admin.autodiscover()
+# from django.views.generic.base import TemplateView
 
 
 # from post.forms import UserRegistrationForm
