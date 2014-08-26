@@ -1,14 +1,21 @@
-from django.conf.urls import *
-from django.conf.urls import patterns, url, include
-from django.contrib.auth.views import login, logout
-from django.contrib import admin
-admin.autodiscover()
-from django.views.generic.base import TemplateView
+# from django.conf.urls import *
+# from django.conf.urls import patterns, url, include
+# from django.contrib.auth.views import login, logout
+# from django.contrib import admin
+# admin.autodiscover()
+# from django.views.generic.base import TemplateView
 
 
 # from post.forms import UserRegistrationForm
 # import registration.backends.default.urls as regUrls
 # from registration.backends.default.views import RegistrationView
+
+from django.conf.urls.defaults import *
+
+# This two if you want to enable the Django Admin: (recommended)
+from django.contrib import admin
+admin.autodiscover()
+
 
 urlpatterns = patterns('',
     # Examples:
