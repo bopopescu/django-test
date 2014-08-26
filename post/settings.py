@@ -72,7 +72,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'post.urls'
+ROOT_URLCONF = 'urls'
 
 WSGI_APPLICATION = 'post.wsgi.application'
 TEMPLATE_DIRS = (
@@ -108,7 +108,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-MEDIA_URL = 'http://localhost:8000/' 
+#MEDIA_URL = 'http://localhost:8000/' 
 STATIC_ROOT =  os.path.join("/home/yuva/Desktop/python/post/", 'static')
 
 STATIC_URL = '/static/'
