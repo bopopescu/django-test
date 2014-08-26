@@ -59,8 +59,7 @@ INSTALLED_APPS = (
     'jquery',
     'userprofile',
     'south',
-    'bootstrap3',
-    'registration'
+    'bootstrap3'
 )
 
 
