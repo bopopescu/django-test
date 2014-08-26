@@ -24,7 +24,7 @@ handlers:
   expiration: '0'
 
 - url: /.*
-  script: /post/urls.py
+  script: post/post/urls.py
 
 env_variables:
   DJANGO_SETTINGS_MODULE: 'post.settings'
