@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 #from django.utils.image import Image
-import PIL.Image as Image
+#import PIL.Image as Image
 #from registration.signals import user_registered
 import pdb;
 
