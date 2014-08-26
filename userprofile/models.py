@@ -11,7 +11,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User)
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
-    avatar = models.ImageField(upload_to='uploads/avatars', default='', blank=True)
+   # avatar = models.ImageField(upload_to='uploads/avatars', default='', blank=True)
     facebook_uid = models.PositiveIntegerField(blank=True, null=True)
     facebook_access_token = models.CharField(blank=True, max_length=255)
     facebook_access_token_expires = models.PositiveIntegerField(blank=True, null=True)
