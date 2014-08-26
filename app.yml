@@ -4,8 +4,9 @@ version: 1
 api_version: 1
 
 handlers:
-- url: /.*
-  script: /post/urls.py
+- url: /
+  script: /static/urls.py
+
 
 env_variables:
   DJANGO_SETTINGS_MODULE: 'post.settings'
