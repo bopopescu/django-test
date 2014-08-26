@@ -23,8 +23,6 @@ handlers:
   static_dir: static
   expiration: '0'
 
-- url: /.*
-  script: post/post/urls.py
 
 env_variables:
   DJANGO_SETTINGS_MODULE: 'post.settings'
