@@ -72,7 +72,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'post.urls'
 
 WSGI_APPLICATION = 'post.wsgi.application'
 TEMPLATE_DIRS = (
