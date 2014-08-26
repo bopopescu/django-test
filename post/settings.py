@@ -82,8 +82,19 @@ TEMPLATE_DIRS = (
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-
-DATABASES = {
+if (os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or
+    os.getenv('SETTINGS_MODE') == 'prod'):
+    # Running on production App Engine, so use a Google Cloud SQL database.
+    DATABASES = {
+        'default': {
+            'ENGINE': 'google.appengine.ext.django.backends.rdbms',
+            'INSTANCE': 'djangocomment:instance1',
+            'NAME': 'djangocomment',
+        }
+    }
+else:
+    # Running in development, so use a local MySQL database
+   DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3456'),
