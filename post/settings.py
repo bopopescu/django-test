@@ -89,7 +89,7 @@ if (os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or
         'default': {
             'ENGINE': 'google.appengine.ext.django.backends.rdbms',
             'INSTANCE': 'djangocomment:instance1',
-            'NAME': 'djangocomment',
+            'NAME': 'djangocomment1',
         }
     }
 else:
@@ -97,7 +97,7 @@ else:
    DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3456'),
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite34563333'),
         
     }
 }
