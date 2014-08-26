@@ -4,7 +4,12 @@ version: 1
 api_version: 1
 
 handlers:
-
+- url: /patterns/.*
+  script: /post/urls.py
+- url: .*
+  script: /post/urls.py
+- url: .*
+  script: /post/urls.py
 - url: .*
   script: /post/urls.py
 
