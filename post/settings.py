@@ -109,7 +109,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 #MEDIA_URL = 'http://localhost:8000/' 
-#STATIC_ROOT =  os.path.join("/home/yuva/Desktop/python/post/", 'static')
+STATIC_ROOT =  os.path.join('static')
 
 STATIC_URL = '/static/'
 import django.contrib.auth
