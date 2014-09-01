@@ -60,7 +60,7 @@ INSTALLED_APPS = (
     'userprofile',
     'south',
     'bootstrap3',
-    "registration",
+   # "registration",
 )
 
 
