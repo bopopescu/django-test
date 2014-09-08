@@ -64,6 +64,9 @@ INSTALLED_APPS = (
 )
 
 
+TEMPLATE_DIRS = (
+    os.path.join(PROJECT_DIR, '/templates/'), # for heroku
+)
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
