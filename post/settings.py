@@ -80,9 +80,9 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'post.urls'
 
 WSGI_APPLICATION = 'post.wsgi.application'
-TEMPLATE_DIRS = (
-   '/home/yuva/Desktop/python/post/templates'
-)
+# TEMPLATE_DIRS = (
+#    '/home/yuva/Desktop/python/post/templates'
+# )
 
 
 # Database
