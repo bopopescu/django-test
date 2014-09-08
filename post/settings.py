@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
+PROJECT_DIR = os.path.dirname(__file__) #for heroku
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -60,9 +60,12 @@ INSTALLED_APPS = (
     'userprofile',
     'south',
     'bootstrap3',
-    "registration",
 )
 
+
+TEMPLATE_DIRS = (
+    os.path.join(PROJECT_DIR, '/templates/'), # for heroku
+)
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
