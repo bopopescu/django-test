@@ -65,7 +65,8 @@ INSTALLED_APPS = (
 
 
 TEMPLATE_DIRS = (
-    os.path.join(PROJECT_DIR, '/templates/'), # for heroku
+    #os.path.join(PROJECT_DIR, '/templates/'), # for heroku
+     os.path.join(PROJECT_DIR, "templates"),
 )
 
 MIDDLEWARE_CLASSES = (
