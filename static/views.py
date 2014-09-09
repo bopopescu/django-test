@@ -5,7 +5,7 @@ from django.http import HttpResponseRedirect
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login
-#from django.utils import simplejson as json
+from django.utils import simplejson as json
 from userprofile.models import UserProfile
 from twython import Twython, TwythonError
 import pdb;
