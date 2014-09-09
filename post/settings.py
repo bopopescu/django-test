@@ -13,8 +13,9 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_DIR = os.path.dirname(__file__) #for heroku
-root = lambda * x: os.path.join(os.path.abspath(PROJECT_ROOT), *x)
-
+PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
+ROOT_DIR = os.path.dirname(PROJECT_DIR)
+TEMPLATE_DIR = os.path.join(ROOT_DIR, 'templates')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
@@ -67,7 +68,7 @@ INSTALLED_APPS = (
 
 TEMPLATE_DIRS = (
     #os.path.join(PROJECT_DIR, '/templates/'), # for heroku
-     root('templates'),
+      TEMPLATE_DIR,
 )
 
 MIDDLEWARE_CLASSES = (
