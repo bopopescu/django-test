@@ -1,10 +1,10 @@
-# #from django.conf.urls import patterns, url
-# from django.conf.urls.defaults import *
+#from django.conf.urls import patterns, url
+from django.conf.urls.defaults import *
 
-# #from static import views
+#from static import views
 
-# urlpatterns = patterns('',
-#    # ex: /polls/
+urlpatterns = patterns('',
+   # ex: /polls/
    
-#     url(r'^$', views.index, name='index'),
-# )
+    url(r'^$', views.index, name='index'),
+)
