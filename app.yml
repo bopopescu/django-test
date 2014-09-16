@@ -5,7 +5,7 @@ api_version: 1
 
 handlers:
 - url: .*
-  script: post.wsgi.py
+  script: /post/wsgi.py
 
 
 # env_variables:
