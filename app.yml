@@ -3,9 +3,9 @@ runtime: python
 version: 1
 api_version: 1
 
-# handlers:
-# - url: .*
-#   script: post.wsgi.app
+handlers:
+- url: .*
+  script: django_bootstrap.py
 
 libraries:
   - name: django
