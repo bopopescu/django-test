@@ -8,7 +8,7 @@ handlers:
   script: post.wsgi.app
 
 libraries:
-- name: PIL
+- name: django
   version: latest
 
 
