@@ -5,7 +5,7 @@ api_version: 1
 
 handlers:
 - url: .*
-  script: /post/wsgi.py
+  script: djangoappengine/main/main.py
 
 
 # env_variables:
