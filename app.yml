@@ -4,8 +4,11 @@ version: 1
 api_version: 1
 
 handlers:
-- url: .*
-  script: djangocomment.main.application
+- url: /static
+  static_dir: static
+- url: /.*
+  script: main.application
+
 
 # libraries:
 # - name: django
