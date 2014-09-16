@@ -7,6 +7,10 @@ handlers:
 - url: .*
   script: post.wsgi.app
 
+libraries:
+- name: PIL
+  version: latest
+
 
 env_variables:
   DJANGO_SETTINGS_MODULE: 'post.settings'
