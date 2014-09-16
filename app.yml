@@ -5,7 +5,7 @@ api_version: 1
 
 handlers:
 - url: .*
-  script: /post/main/main.py
+  script: post/main/main.py
 
 
 # env_variables:
