@@ -3,13 +3,13 @@ runtime: python
 version: 1
 api_version: 1
 
-handlers:
-- url: .*
-  script: post.wsgi.app
+# handlers:
+# - url: .*
+#   script: post.wsgi.app
 
 libraries:
-- name: django
-  version: latest
+  - name: django
+    version: latest
 
 
 env_variables:
