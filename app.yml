@@ -5,7 +5,7 @@ api_version: 1
 
 handlers:
 - url: .*
-  script: djangocomment/post/url.py
+  script: /post/url.py
 
 
 # env_variables:
