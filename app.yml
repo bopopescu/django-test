@@ -7,9 +7,9 @@ handlers:
 - url: .*
   script: django_bootstrap.py
 
-libraries:
-- name: django
-  version: latest
+# libraries:
+# - name: django
+#   version: latest
 
 
 # env_variables:
