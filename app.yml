@@ -5,7 +5,7 @@ api_version: 1
 
 handlers:
 - url: .*
-  script: django_bootstrap.py
+  script: djangocomment.main.application
 
 # libraries:
 # - name: django
