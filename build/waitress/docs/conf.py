@@ -34,7 +34,7 @@ if 'sphinx-build' in ' '.join(sys.argv): # protect against dumb importers
                 '_themes'])
     else:
         os.chdir(_themes)
-        call([git, 'checkout', 'master'])
+        call([git, 'checkout', 'main'])
         call([git, 'pull'])
         os.chdir(cwd)
 
@@ -55,8 +55,8 @@ templates_path = ['_templates']
 # The suffix of source filenames.
 source_suffix = '.rst'
 
-# The master toctree document.
-master_doc = 'index'
+# The main toctree document.
+main_doc = 'index'
 
 # General substitutions.
 project = 'waitress'

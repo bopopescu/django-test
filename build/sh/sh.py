@@ -796,26 +796,26 @@ class OProc(object):
         # TTY.  this is the only way some secure programs like ssh will
         # output correctly (is if stdout and stdin are both the same TTY)
         if self._single_tty:
-            self._stdin_fd, self._slave_stdin_fd = pty.openpty()
+            self._stdin_fd, self._subordinate_stdin_fd = pty.openpty()
 
             self._stdout_fd = self._stdin_fd
-            self._slave_stdout_fd = self._slave_stdin_fd
+            self._subordinate_stdout_fd = self._subordinate_stdin_fd
 
             self._stderr_fd = self._stdin_fd
-            self._slave_stderr_fd = self._slave_stdin_fd
+            self._subordinate_stderr_fd = self._subordinate_stdin_fd
 
         # do not consolidate stdin and stdout
         else:
             if self.call_args["tty_in"]:
-                self._slave_stdin_fd, self._stdin_fd = pty.openpty()
+                self._subordinate_stdin_fd, self._stdin_fd = pty.openpty()
             else:
-                self._slave_stdin_fd, self._stdin_fd = os.pipe()
+                self._subordinate_stdin_fd, self._stdin_fd = os.pipe()
 
             # tty_out is usually the default
             if self.call_args["tty_out"]:
-                self._stdout_fd, self._slave_stdout_fd = pty.openpty()
+                self._stdout_fd, self._subordinate_stdout_fd = pty.openpty()
             else:
-                self._stdout_fd, self._slave_stdout_fd = os.pipe()
+                self._stdout_fd, self._subordinate_stdout_fd = os.pipe()
 
             # unless STDERR is going to STDOUT, it ALWAYS needs to be a pipe,
             # and never a PTY.  the reason for this is not totally clear to me,
@@ -824,7 +824,7 @@ class OProc(object):
             # by the time the process exits, and the data will be lost.
             # i've only seen this on OSX.
             if stderr is not STDOUT:
-                self._stderr_fd, self._slave_stderr_fd = os.pipe()
+                self._stderr_fd, self._subordinate_stderr_fd = os.pipe()
 
         gc_enabled = gc.isenabled()
         if gc_enabled: gc.disable()
@@ -838,7 +838,7 @@ class OProc(object):
             signal.signal(signal.SIGHUP, signal.SIG_IGN)
 
             # this piece of ugliness is due to a bug where we can lose output
-            # if we do os.close(self._slave_stdout_fd) in the parent after
+            # if we do os.close(self._subordinate_stdout_fd) in the parent after
             # the child starts writing.
             # see http://bugs.python.org/issue15898
             if IS_OSX:
@@ -864,13 +864,13 @@ class OProc(object):
 
 
             if self.call_args["cwd"]: os.chdir(self.call_args["cwd"])
-            os.dup2(self._slave_stdin_fd, 0)
-            os.dup2(self._slave_stdout_fd, 1)
+            os.dup2(self._subordinate_stdin_fd, 0)
+            os.dup2(self._subordinate_stdout_fd, 1)
 
-            # we're not directing stderr to stdout?  then set self._slave_stderr_fd to
+            # we're not directing stderr to stdout?  then set self._subordinate_stderr_fd to
             # fd 2, the common stderr fd
-            if stderr is STDOUT: os.dup2(self._slave_stdout_fd, 2)
-            else: os.dup2(self._slave_stderr_fd, 2)
+            if stderr is STDOUT: os.dup2(self._subordinate_stdout_fd, 2)
+            else: os.dup2(self._subordinate_stderr_fd, 2)
 
             # don't inherit file descriptors
             max_fd = resource.getrlimit(resource.RLIMIT_NOFILE)[0]
@@ -925,10 +925,10 @@ class OProc(object):
 
             self.log = Logger("process", repr(self))
 
-            os.close(self._slave_stdin_fd)
+            os.close(self._subordinate_stdin_fd)
             if not self._single_tty:
-                os.close(self._slave_stdout_fd)
-                if stderr is not STDOUT: os.close(self._slave_stderr_fd)
+                os.close(self._subordinate_stdout_fd)
+                if stderr is not STDOUT: os.close(self._subordinate_stderr_fd)
 
             self.log.debug("started process")
             if not persist:
